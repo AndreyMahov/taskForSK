@@ -3,6 +3,7 @@ package com.mahov.superkassa.test.services.impl;
 import com.mahov.superkassa.test.domain.entity.SkExample;
 import com.mahov.superkassa.test.domain.dto.RequestDto;
 import com.mahov.superkassa.test.domain.dto.ResponseDto;
+import com.mahov.superkassa.test.domain.enums.ExceptionMessage;
 import com.mahov.superkassa.test.domain.exception.ObjectNotFound;
 import com.mahov.superkassa.test.repositories.SkExampleRepository;
 import com.mahov.superkassa.test.services.SkExampleService;
@@ -19,12 +20,10 @@ import java.math.BigInteger;
 public class SkExampleServiceImpl implements SkExampleService {
     private final SkExampleRepository skExampleRepository;
 
-    @Transactional
+    @Transactional()
     public ResponseDto modify(RequestDto requestDto){
-        long id = requestDto.getId();
-        log.info("Метод modify(RequestDto requestDto) класса SkExampleServiceImpl начал работу. id параметра {}",id);
-        SkExample skExample = skExampleRepository.findById(id)
-                .orElseThrow(()->new ObjectNotFound(id));
+        SkExample skExample = skExampleRepository.findById(requestDto.getId())
+                .orElseThrow(()->new ObjectNotFound(ExceptionMessage.OBJECT_NOT_FOUND.getMessage()));
 
         BigInteger current = skExample.getResponseDto().getCurrent();
         BigInteger result = current.add(requestDto.getAdd());
