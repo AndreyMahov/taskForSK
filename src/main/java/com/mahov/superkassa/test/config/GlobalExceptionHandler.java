@@ -9,19 +9,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-@Slf4j
 public class GlobalExceptionHandler {
-
-//    @ExceptionHandler(ObjectNotFound.class)
-//    public ResponseEntity<ErrorResponse> handleIdNotMatchException(ObjectNotFound e) {
-//        log.error("Id not match exception");
-//        return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT)
-//                .body(new ErrorResponse(e.getMessage()));
-//    }
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<ErrorResponse> allExceptions(RuntimeException e) {
-        log.error("Id not match exception");
         return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT)
                 .body(new ErrorResponse("сервер не может приготовить кофе, потому что он чайник"));
     }

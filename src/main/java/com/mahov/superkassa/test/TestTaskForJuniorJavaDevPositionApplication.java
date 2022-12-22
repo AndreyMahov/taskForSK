@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TestTaskForJuniorJavaDevPositionApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TestTaskForJuniorJavaDevPositionApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TestTaskForJuniorJavaDevPositionApplication.class, args);
+    }
 
 }

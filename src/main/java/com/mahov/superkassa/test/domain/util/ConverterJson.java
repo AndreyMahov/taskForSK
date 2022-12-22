@@ -13,8 +13,8 @@ public class ConverterJson implements AttributeConverter<ResponseDto, String> {
     private final static Gson GSON = new Gson();
 
     @Override
-    public String convertToDatabaseColumn(ResponseDto mjo) {
-        return GSON.toJson(mjo);
+    public String convertToDatabaseColumn(ResponseDto responseDto) {
+        return GSON.toJson(responseDto);
     }
 
     @Override

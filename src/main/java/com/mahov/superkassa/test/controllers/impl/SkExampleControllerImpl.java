@@ -19,7 +19,7 @@ public class SkExampleControllerImpl implements SkExampleController {
 
     @PostMapping("/modify")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseDto modify(@RequestBody RequestDto requestDto){
+    public ResponseDto modify(@RequestBody RequestDto requestDto) {
         return skExampleServiceImpl.modify(requestDto);
     }
 }

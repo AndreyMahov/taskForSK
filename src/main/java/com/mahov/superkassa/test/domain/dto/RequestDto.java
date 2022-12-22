@@ -10,6 +10,5 @@ import java.math.BigInteger;
 public class RequestDto {
 
     private long id;
-
     private BigInteger add;
 }

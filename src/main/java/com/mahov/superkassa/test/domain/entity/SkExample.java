@@ -34,7 +34,7 @@ public class SkExample {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "obj",columnDefinition = "jsonb")
+    @Column(name = "obj", columnDefinition = "jsonb")
     @Convert(converter = ConverterJson.class)
     private ResponseDto responseDto;
 

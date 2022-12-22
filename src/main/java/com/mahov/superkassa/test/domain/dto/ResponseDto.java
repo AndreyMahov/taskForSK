@@ -15,7 +15,6 @@ public class ResponseDto implements Serializable {
 
     @Serial
     private final static long serialVersionUID = 2053L;
-
     private BigInteger current;
 
     public ResponseDto(BigInteger current) {
