@@ -22,6 +22,7 @@ public class SkExampleServiceImpl implements SkExampleService {
 
     @Transactional()
     public ResponseDto modify(RequestDto requestDto){
+        log.info("метод modify класса SkExampleRepository начал работу");
         SkExample skExample = skExampleRepository.findById(requestDto.getId())
                 .orElseThrow(()->new ObjectNotFound(ExceptionMessage.OBJECT_NOT_FOUND.getMessage()));
 
